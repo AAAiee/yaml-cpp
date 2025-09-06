@@ -1,4 +1,4 @@
-project "Yaml"
+project "yaml-cpp"
 	kind "StaticLib"
 	language "C++"
 	cppdialect "C++20"
@@ -12,15 +12,19 @@ project "Yaml"
 		"src/**.h",
 		"src/**.cpp",
 
-        "include/**.h
+        "include/**.h"
 	}
 
     includedirs
     {
         "include"
     }
+	
+	warnings "off"
 
+	defines { "YAML_CPP_STATIC_DEFINE" }	
 
+	
 	filter "system:windows"
 		systemversion "latest"
 
